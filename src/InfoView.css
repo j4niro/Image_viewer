@@ -1,0 +1,12 @@
+.info-view {
+  position: absolute;
+  right: 15px;
+  width: 20%;
+  min-width: 200px;
+  margin: 5px 0px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(33, 69, 169, 0.396);
+  backdrop-filter: blur(5px);
+  color: white;
+}

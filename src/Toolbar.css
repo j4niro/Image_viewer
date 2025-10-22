@@ -1,0 +1,71 @@
+.toolbar {
+    height: 65px;
+    background-color: #deeeff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spacer {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttonbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.zoom-slider {
+    margin: 8px 20px;
+    padding: 0px;
+    display: flex;
+    align-items: bottom;
+    border: none;
+}
+
+.zoom-slider input[type="range"] {
+    width: 200px;
+}
+
+.toolbar label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.toolbar button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 10px 5px;
+    border: 1px solid rgb(66, 131, 210);
+    border-radius: 10px;
+    padding: 5px 5px;
+    background-color: #deeeff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar button img {
+    height: 80%;
+    max-width: 80%;
+    -webkit-user-drag: none;
+}
+
+.toolbar button:hover:enabled {
+    background-color: rgba(95, 167, 255, 0.743);
+}
+
+.toolbar button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.toolbar button:active:enabled,
+.toolbar button.pressed{
+  background-color: rgba(95, 167, 255, 0.743);
+  box-shadow: none;
+}

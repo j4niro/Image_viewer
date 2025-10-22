@@ -1,0 +1,19 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  min-width: 500px;
+  overflow: visible;
+}
+
+.main-div {
+  width: calc(100vw - 170px);
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer-div {
+  display: flex;
+  height: calc(100vh - 60px);
+}

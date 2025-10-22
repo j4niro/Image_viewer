@@ -1,0 +1,11 @@
+.viewer {
+    background-color: #e4effcda;
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: space-around;
+    overflow-x:auto;
+    overflow-y:auto;
+    scrollbar-gutter: stable both-edges;
+    padding: 0px 10px;
+}
