@@ -4,7 +4,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 export type ViewerState = {
   currentImage: string | null;
   currentImageIndex: number;
-  zoomLevel: number;
+  zoomLevel: Record<number, number>;
   isActive: boolean;
   imageList: string[];
   activeThumbnail: number | null;
@@ -13,7 +13,7 @@ export type ViewerState = {
 const initialState: ViewerState = {
   currentImage: null,
   currentImageIndex: 0,
-  zoomLevel: 1,
+  zoomLevel: { 100: 100 },
   isActive: false,
   imageList: Array.from({ length: 20 }, (_, i) => `/img_${String(i + 1).padStart(3, "0")}.jpg`),
   activeThumbnail: null,
@@ -30,8 +30,8 @@ const viewerSlice = createSlice({
       state.currentImageIndex = action.payload;
       state.currentImage = state.imageList[action.payload];
     },
-    setZoomLevel: (state, action: PayloadAction<number>) => {
-      state.zoomLevel = action.payload;
+    setZoomLevel: (state, action: PayloadAction<{index: number, zoom: number}>) => {
+      state.zoomLevel[action.payload.index] = action.payload.zoom;
     },
     toggleInfoPanel: (state) => {
       state.isActive = !state.isActive;

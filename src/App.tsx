@@ -14,7 +14,7 @@ function App() {
         <Toolbar />
         <div className='viewer-div'>
           <Viewer />
-          <InfoView />
+          {/*<InfoView />*/}
         </div>
       </div>
       </>

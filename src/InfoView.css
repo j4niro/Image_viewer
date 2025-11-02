@@ -1,6 +1,7 @@
 .info-view {
   position: absolute;
-  right: 15px;
+  top: 50px;
+  right: 50px;
   width: 20%;
   min-width: 200px;
   margin: 5px 0px;
