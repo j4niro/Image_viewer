@@ -5,16 +5,20 @@ import InfoView from './InfoView';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from './storeHooks/storeHooks';
 
+// Composant Toolbar pour la navigation et le contrôle du zoom
+
 function Toolbar() {
 
-  const currentImageIndex =  useAppSelector((state : any) => state.viewer.currentImageIndex);
-  const imageList = useAppSelector((state: any) => state.viewer.imageList);
-  const zoom = useAppSelector((state : any) => state.viewer.zoomLevel[currentImageIndex] || 100);
+  const currentImageIndex =  useAppSelector((state : any) => state.viewer.currentImageIndex); // Récupère l'index de l'image actuelle depuis le store
+  const imageList = useAppSelector((state: any) => state.viewer.imageList); // Récupère la liste des images depuis le store
+  const zoom = useAppSelector((state : any) => state.viewer.zoomLevel[currentImageIndex] || 100); // Récupère le niveau de zoom pour l'image actuelle depuis le store
 
   const dispatch = useAppDispatch();
 
+  // État local pour afficher ou masquer le panneau d'informations
   const [showInfo, setShowInfo] = useState(false);
 
+  // Gestion des actions de navigation
   function handleFirst() {
     dispatch(firstImage());
   }
@@ -35,6 +39,7 @@ function Toolbar() {
     dispatch(setZoomLevel({ index: currentImageIndex, zoom: zoomLevel }));
   }
 
+  // Rendu de la barre d'outils avec les boutons de navigation, le contrôle du zoom et le panneau d'informations
   return (
     <div className="toolbar">
         <div className="spacer">

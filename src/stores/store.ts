@@ -2,6 +2,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import viewerReducer from "../slices/slice";
 
+// Configuration du store Redux avec le slice "viewer"
+
 const store = configureStore({
   reducer: {
     viewer: viewerReducer,

@@ -3,11 +3,14 @@ import { useSelector } from 'react-redux'
 import type { RootState } from './stores/store';
 import { useAppSelector } from './storeHooks/storeHooks';
 
-function InfoView() {
-  const currentImageIndex = useAppSelector((state: RootState) => state.viewer.currentImageIndex);
-  const zoom = useAppSelector((state: RootState) => state.viewer.zoomLevel[currentImageIndex] || 100);
-  const imageList = useAppSelector((state: RootState) => state.viewer.imageList);
+// Composant InfoView pour afficher les informations détaillées de l'image actuelle
 
+function InfoView() {
+  const currentImageIndex = useAppSelector((state: RootState) => state.viewer.currentImageIndex); // Récupère l'index de l'image actuelle depuis le store
+  const zoom = useAppSelector((state: RootState) => state.viewer.zoomLevel[currentImageIndex] || 100); // Récupère le niveau de zoom pour l'image actuelle depuis le store
+  const imageList = useAppSelector((state: RootState) => state.viewer.imageList); // Récupère la liste des images depuis le store
+
+// Rendu des informations détaillées de l'image actuelle
   return (
     <div className="info-view">
       <p>Image detailed Informations</p>
