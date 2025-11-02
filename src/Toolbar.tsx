@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { firstImage, lastImage, nextImage, previousImage, setZoomLevel } from './slices/slice';
 import InfoView from './InfoView';
 import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from './storeHooks/storeHooks';
 
 function Toolbar() {
 
-  const currentImageIndex =  useSelector((state : any) => state.viewer.currentImageIndex);
-  const imageList = useSelector((state: any) => state.viewer.imageList);
-  const zoom = useSelector((state : any) => state.viewer.zoomLevel[currentImageIndex] || 100);
+  const currentImageIndex =  useAppSelector((state : any) => state.viewer.currentImageIndex);
+  const imageList = useAppSelector((state: any) => state.viewer.imageList);
+  const zoom = useAppSelector((state : any) => state.viewer.zoomLevel[currentImageIndex] || 100);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [showInfo, setShowInfo] = useState(false);
 

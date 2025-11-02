@@ -1,11 +1,12 @@
 import './InfoView.css'
 import { useSelector } from 'react-redux'
 import type { RootState } from './stores/store';
+import { useAppSelector } from './storeHooks/storeHooks';
 
 function InfoView() {
-  const currentImageIndex = useSelector((state: RootState) => state.viewer.currentImageIndex);
-  const zoom = useSelector((state: RootState) => state.viewer.zoomLevel[currentImageIndex] || 100);
-  const imageList = useSelector((state: RootState) => state.viewer.imageList);
+  const currentImageIndex = useAppSelector((state: RootState) => state.viewer.currentImageIndex);
+  const zoom = useAppSelector((state: RootState) => state.viewer.zoomLevel[currentImageIndex] || 100);
+  const imageList = useAppSelector((state: RootState) => state.viewer.imageList);
 
   return (
     <div className="info-view">

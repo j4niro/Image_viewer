@@ -17,4 +17,13 @@
     justify-content: center;
     color: black;
     margin-bottom: 20px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.thumbnail-item.active {
+    background-color: #bddaf9;
+    border: 2px solid #0078d4;
 }

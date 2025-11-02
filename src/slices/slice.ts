@@ -45,21 +45,25 @@ const viewerSlice = createSlice({
       if (state.currentImageIndex < state.imageList.length - 1) {
         state.currentImageIndex += 1;
         state.currentImage = state.imageList[state.currentImageIndex];
+        state.activeThumbnail = state.currentImageIndex;
       }
     },
     previousImage: (state) => {
       if (state.currentImageIndex > 0) {
         state.currentImageIndex -= 1;
         state.currentImage = state.imageList[state.currentImageIndex];
+        state.activeThumbnail = state.currentImageIndex;
       }
     },
     firstImage: (state) => {
       state.currentImageIndex = 0;
       state.currentImage = state.imageList[0];
+      state.activeThumbnail = 0;
     },
     lastImage: (state) => {
       state.currentImageIndex = state.imageList.length - 1;
       state.currentImage = state.imageList[state.currentImageIndex];
+      state.activeThumbnail = state.currentImageIndex;
     },
   },
 });
