@@ -16,7 +16,7 @@ const initialState: ViewerState = {
   zoomLevel: { 100: 100 },
   isActive: false,
   imageList: Array.from({ length: 20 }, (_, i) => `/img_${String(i + 1).padStart(3, "0")}.jpg`),
-  activeThumbnail: null,
+  activeThumbnail: 0,
 };
 
 const viewerSlice = createSlice({
